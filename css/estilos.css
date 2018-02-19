@@ -1,0 +1,247 @@
+/* Tipografia */
+@font-face {
+  font-family: 'Dancing Script';
+  src: url('DancingScript-Regular.otf');
+}
+
+/* Configuración de las secciones */
+body{
+  background: #02010a;
+  font-family: 'Dancing Script'
+}
+
+header{
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  background-color:  #5B7989;
+  animation: slidein 1s;
+}
+
+div{
+  padding: 10px;
+  background-color: #d5C75F;
+}
+
+footer{
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+  background-color: #C6D5C5;
+}
+
+/* Configuracion de los contenedores y los items */
+.contenedor{
+  display: flex;
+  flex-flow: row wrap;
+  width: 900px;
+  margin: auto;
+}
+
+.item{
+  box-sizing: border-box;
+  float:left;
+  text-align: center;
+}
+
+/* Configuración de imagenes */
+img[src$=jpg]{
+  box-shadow: 2px 2px grey;
+  border: solid 2px black;
+  margin: 1em;
+  width: 90%;
+}
+
+.logo{
+  width: 1.5em;
+}
+
+/* Configuración del contenido del encabezado "header" */
+#encabezado{
+  width: 70%;
+  text-align: left;
+  color: white;
+  font-size: 2.3em;
+  text-shadow: 2px 2px #02010a;
+}
+
+#navegador{
+  width: 30%;
+  padding-top: 4.5em;
+  text-align: right;
+}
+
+#navegador>a{
+  color: white;
+  padding: 0.5em;
+  font-size: 1.2em;
+}
+
+.actual{
+  text-decoration: none;
+}
+
+/* Configuración de la sección principal "div" */
+#seccion_principal{
+  width: 100%;
+  padding: 10px;
+}
+
+#seccion_secundaria1, #seccion_secundaria2{
+  width: 50%;
+  padding: 10px;
+}
+
+/* Configuración del tamaño de los cuadros de las imagenes */
+#paisaje1, #paisaje2, #paisaje3, #paisaje4, #paisaje5, #paisaje6,
+#retrato1, #retrato2, #retrato3, #retrato4, #retrato5, #retrato6{
+  width: 33.33%;
+}
+
+/* Configuración del pie de pagina "footer" */
+#anexo1, #anexo2, #anexo3, #anexo4{
+  text-align: left;
+  width: 25%;
+  padding: 10px;
+}
+
+#anexo1>p>a{
+  color: black;
+}
+
+#anexo3>p>a{
+  color: black;
+  text-decoration: none;
+}
+
+#anexo3>p>a:hover{
+  -webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+  color: grey;
+}
+
+/* Configuración de las animaciones y filtros para las imagenes */
+#seccion_secundaria1 img{
+	transition-property: -ms-transform,  -webkit-transform, transform;
+	transition-duration: 1s;
+}
+
+#seccion_secundaria1 img:hover{
+  -ms-transform: rotate(10deg); /* IE 9 */
+	-webkit-transform: rotate(10deg); /* Chrome, Safari, Opera */
+	transform: rotate(10deg);
+}
+
+#seccion_secundaria2 img{
+	transition: translate();
+	transition-duration: 1s;
+}
+
+#seccion_secundaria2 img:hover{
+  transform: translate(20px, -5px)
+}
+
+#paisaje1 img, #retrato1 img{
+  -webkit-finter: blur(10px);
+	filter: blur(10px);
+}
+
+#paisaje2 img, #retrato2 img, #paisaje4 img, #retrato4 img, #paisaje6 img, #retrato6 img{
+  -webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+  color: grey;
+}
+
+#paisaje3 img, #retrato3 img{
+  -webkit-filter: sepia(90%);
+	filter: sepia(90%);
+}
+
+
+@-webkit-keyframes slidein{
+  0%{
+    margin-top: 150%;
+  }
+  60%{
+    margin-top: -5%;
+  }
+  100%{
+    margin-top: 0%;
+  }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 601px){
+
+	.contenedor
+	{
+		width: 95%;
+	}
+
+  #encabezado, #navegador{
+    width: 100%;
+    text-align: center;
+    padding: 0px;
+  }
+  #retrato1, #retrato2, #retrato3, #retrato4, #retrato5, #retrato6,
+  #paisaje1, #paisaje2, #paisaje3, #paisaje4, #paisaje5, #paisaje6{
+    width: 50%;
+  }
+
+  #anexo1, #anexo2, #anexo3, #anexo4{
+    width: 50%;
+  }
+
+  #anexo1{
+    order: 1;
+  }
+
+  #anexo3{
+    order: 2;
+  }
+
+  #anexo2{
+    order: 3;
+  }
+
+  #anexo4{
+    order: 4;
+  }
+
+}
+
+@media screen and (max-width: 600px){
+
+	.contenedor
+	{
+		width: 95%;
+	}
+
+  #encabezado, #navegador{
+    width: 100%;
+    text-align: center;
+    padding: 0px;
+  }
+
+  #seccion_principal, #seccion_secundaria1, #seccion_secundaria2,
+  #anexo1, #anexo2, #anexo3, #anexo4,
+  #retrato1, #retrato2, #retrato3, #retrato4, #retrato5, #retrato6,
+  #paisaje1, #paisaje2, #paisaje3, #paisaje4, #paisaje5, #paisaje6
+  {
+    width: 100%;
+  }
+
+  #anexo1{
+    order: 1;
+  }
+
+  #anexo3{
+    order: 2;
+  }
+
+  #anexo2{
+    order: 3;
+  }
+
+  #anexo4{
+    order: 4;
+  }
+
+}
